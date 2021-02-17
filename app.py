@@ -40,8 +40,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end> "
+        f"/api/v1.0/temp/start<br/>"
+        f"/api/v1.0/temp/start/end"
 
     )
 
@@ -66,8 +66,6 @@ def precipitation():
         prcp_date["date"] = date
         prcp_date["prcp"] = prcp
         all_prcp.append(prcp_date)
-    
-    # all_names = list(np.ravel(results)) - will help on next route
 
     return jsonify(all_prcp)
 @app.route("/api/v1.0/stations")
